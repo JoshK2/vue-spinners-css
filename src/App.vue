@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CircleLoader :loading="false" />
+    <CircleLoader :loading="true" />
+    <CircleLoader color="yellow" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CircleLoader from './components/circle-loader.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CircleLoader
   }
 }
 </script>
