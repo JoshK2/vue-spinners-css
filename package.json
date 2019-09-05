@@ -1,15 +1,46 @@
 {
   "name": "vue-spinners-css",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoshK2/vue-spinners-css"
+  },
+  "bugs": "https://github.com/JoshK2/vue-spinners-css/issues",
+  "homepage": "https://github.com/JoshK2/vue-spinners-css",
+  "keywords": [
+    "vue-spinners",
+    "vue-spinner",
+    "loadingio",
+    "loading-animations",
+    "loaders",
+    "css-animations",
+    "vuejs",
+    "component",
+    "vue-component",
+    "vue",
+    "spinner",
+    "spinners",
+    "loading",
+    "loader",
+    "progress",
+    "activity"
+  ],
+  "author": "JoshK2",
+  "license": "MIT",
+  "main": "dist/vue-spinners-css.common.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:lib": "",
+    "build:lib": "vue-cli-service build --target lib --name vue-spinners-css ./src/lib.js",
     "lint": "vue-cli-service lint",
     "format": "prettier --write \"src/**/*.vue\" \"src/**/*.js\""
   },
-  "dependencies": {
+  "peerDependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
@@ -20,8 +51,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "prettier": "^1.18.2",
-    "vue-template-compiler": "^2.6.10"
+    "prettier": "^1.18.2"
   },
   "eslintConfig": {
     "root": true,
