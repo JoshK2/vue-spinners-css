@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-spinner {
     color: official;
     display: inline-block;

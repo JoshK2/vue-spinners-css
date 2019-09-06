@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-circle {
     display: inline-block;
     width: 64px;

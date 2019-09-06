@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-dual-ring {
     display: inline-block;
     width: 80px;

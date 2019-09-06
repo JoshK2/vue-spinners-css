@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-heart {
     display: inline-block;
     position: relative;

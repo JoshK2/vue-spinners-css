@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-default {
     display: inline-block;
     position: relative;

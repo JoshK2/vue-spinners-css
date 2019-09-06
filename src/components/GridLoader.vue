@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-grid {
     display: inline-block;
     position: relative;

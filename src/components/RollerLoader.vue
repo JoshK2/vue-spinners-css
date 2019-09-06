@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-roller {
     display: inline-block;
     position: relative;

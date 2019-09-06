@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-hourglass {
     display: inline-block;
     position: relative;

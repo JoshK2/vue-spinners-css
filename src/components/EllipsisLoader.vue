@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lds-ellipsis {
     display: inline-block;
     position: relative;
