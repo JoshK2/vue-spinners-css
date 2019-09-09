@@ -73,27 +73,25 @@ Vue.use(VueSpinnersCss)
 ### Vue Local Registration
 ```html
 <template>
-	<FacebookLoader :color="randomcolor" />
-	<FacebookLoader />
+  <FacebookLoader :color="randomcolor" />
+  <FacebookLoader />
 </template>
 
 <script>
   //using npm or yarn
   import { FacebookLoader } from 'vue-spinners-css';
   //using bit
-	import FacebookLoader from '@bit/joshk.vue-spinners-css.facebook-loader';
-	import { getRandomColor } from '@bit/joshk.jotils.get-random-color'
+  import FacebookLoader from '@bit/joshk.vue-spinners-css.facebook-loader';
+  import { getRandomColor } from '@bit/joshk.jotils.get-random-color'
 
-	export default (
-		{
-			data: () => ({
-				randomcolor: getRandomColor()
-			}),
-			components: {
-				FacebookLoader,
-			}
-		}
-	)
+  export default ({
+    data: () => ({
+      randomcolor: getRandomColor()
+    }),
+      components: {
+        FacebookLoader,
+      }
+  })
 </script>
 ```
 
