@@ -71,16 +71,16 @@ Vue.use(VueSpinnersCss)
 ```
 
 ### Vue Local Registration
-```javascript
+```html
 <template>
 	<FacebookLoader :color="randomcolor" />
 	<FacebookLoader />
 </template>
 
 <script>
-    //using npm or yarn
-    import { FacebookLoader } from 'vue-spinners-css';
-    //using bit
+  //using npm or yarn
+  import { FacebookLoader } from 'vue-spinners-css';
+  //using bit
 	import FacebookLoader from '@bit/joshk.vue-spinners-css.facebook-loader';
 	import { getRandomColor } from '@bit/joshk.jotils.get-random-color'
 
