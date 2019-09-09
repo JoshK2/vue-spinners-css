@@ -88,9 +88,9 @@ Vue.use(VueSpinnersCss)
     data: () => ({
       randomcolor: getRandomColor()
     }),
-      components: {
-        FacebookLoader,
-      }
+    components: {
+      FacebookLoader,
+    }
   })
 </script>
 ```
