@@ -1,64 +1,64 @@
 <template>
     <div id="app">
-        <h2>Color Property</h2>
+        <h1 style="text-align: center;">Vue Spinners</h1>
         <div class="block">
-            <CircleLoader :color="'black'" />
-            <CircleLoader :color="'#de3541'" />
+            <CircleLoader :color="'#54f1d2'" />
+            <CircleLoader :color="'#be97e8'" />
             <CircleLoader />
         </div>
         <div class="block">
-            <DefaultLoader :color="'black'" />
-            <DefaultLoader :color="'#de3541'" />
+            <DefaultLoader :color="'#54f1d2'" />
+            <DefaultLoader :color="'#be97e8'" />
             <DefaultLoader />
         </div>
         <div class="block">
-            <DualRingLoader :color="'black'" />
-            <DualRingLoader :color="'#de3541'" />
+            <DualRingLoader :color="'#54f1d2'" />
+            <DualRingLoader :color="'#be97e8'" />
             <DualRingLoader />
         </div>
         <div class="block">
-            <EllipsisLoader :color="'black'" />
-            <EllipsisLoader :color="'#de3541'" />
+            <EllipsisLoader :color="'#54f1d2'" />
+            <EllipsisLoader :color="'#be97e8'" />
             <EllipsisLoader />
         </div>
         <div class="block">
-            <FacebookLoader :color="'black'" />
-            <FacebookLoader :color="'#de3541'" />
+            <FacebookLoader :color="'#54f1d2'" />
+            <FacebookLoader :color="'#be97e8'" />
             <FacebookLoader />
         </div>
         <div class="block">
-            <GridLoader :color="'black'" />
-            <GridLoader :color="'#de3541'" />
+            <GridLoader :color="'#54f1d2'" />
+            <GridLoader :color="'#be97e8'" />
             <GridLoader />
         </div>
         <div class="block">
-            <HeartLoader :color="'black'" />
-            <HeartLoader :color="'#de3541'" />
+            <HeartLoader :color="'#54f1d2'" />
+            <HeartLoader :color="'#be97e8'" />
             <HeartLoader />
         </div>
         <div class="block">
-            <HourglassLoader :color="'black'" />
-            <HourglassLoader :color="'#de3541'" />
+            <HourglassLoader :color="'#54f1d2'" />
+            <HourglassLoader :color="'#be97e8'" />
             <HourglassLoader />
         </div>
         <div class="block">
-            <RingLoader :color="'black'" />
-            <RingLoader :color="'#de3541'" />
+            <RingLoader :color="'#54f1d2'" />
+            <RingLoader :color="'#be97e8'" />
             <RingLoader />
         </div>
         <div class="block">
-            <RippleLoader :color="'black'" />
-            <RippleLoader :color="'#de3541'" />
+            <RippleLoader :color="'#54f1d2'" />
+            <RippleLoader :color="'#be97e8'" />
             <RippleLoader />
         </div>
         <div class="block">
-            <RollerLoader :color="'black'" />
-            <RollerLoader :color="'#de3541'" />
+            <RollerLoader :color="'#54f1d2'" />
+            <RollerLoader :color="'#be97e8'" />
             <RollerLoader />
         </div>
         <div class="block">
-            <SpinnerLoader :color="'black'" />
-            <SpinnerLoader :color="'#de3541'" />
+            <SpinnerLoader :color="'#54f1d2'" />
+            <SpinnerLoader :color="'#be97e8'" />
             <SpinnerLoader />
         </div>
         <div style="clear: both"></div>
