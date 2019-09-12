@@ -10,6 +10,10 @@
 </p>
 Amazing collection of pure CSS vue spinners components of css spinners for ajax or loading animation based on loading.io.  
 
+- 💅No extra CSS imports
+- ✂️Zero dependencies
+- 📦Spinners can be installing separately
+
 ## [Live Demo](https://bit.dev/joshk/vue-spinners-css)
 
 Browse components and explore their props with [Bit](https://bit.dev/joshk/vue-spinners-css).  
