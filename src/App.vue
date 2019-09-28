@@ -61,6 +61,11 @@
             <SpinnerLoader :color="'#be97e8'" />
             <SpinnerLoader />
         </div>
+        <div class="block">
+            <OrbitalsLoader :color="'#54f1d2'" />
+            <OrbitalsLoader :color="'#be97e8'" />
+            <OrbitalsLoader />
+        </div>
         <div style="clear: both"></div>
     </div>
 </template>
@@ -78,6 +83,7 @@ import RingLoader from './components/RingLoader.vue'
 import RippleLoader from './components/RippleLoader.vue'
 import RollerLoader from './components/RollerLoader.vue'
 import SpinnerLoader from './components/SpinnerLoader.vue'
+import OrbitalsLoader from './components/OrbitalsLoader.vue'
 
 export default {
     name: 'app',
@@ -94,6 +100,7 @@ export default {
         RippleLoader,
         RollerLoader,
         SpinnerLoader,
+        OrbitalsLoader
     },
 }
 </script>

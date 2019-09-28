@@ -10,6 +10,7 @@ import RingLoader from './RingLoader.vue'
 import RippleLoader from './RippleLoader.vue'
 import RollerLoader from './RollerLoader.vue'
 import SpinnerLoader from './SpinnerLoader.vue'
+import OrbitalsLoader from './OrbitalsLoader.vue'
 
 export {
     CircleLoader,
@@ -24,4 +25,5 @@ export {
     RippleLoader,
     RollerLoader,
     SpinnerLoader,
+    OrbitalsLoader,
 }
