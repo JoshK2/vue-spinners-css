@@ -100,7 +100,7 @@ export default {
         RippleLoader,
         RollerLoader,
         SpinnerLoader,
-        OrbitalsLoader
+        OrbitalsLoader,
     },
 }
 </script>

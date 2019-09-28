@@ -2,12 +2,13 @@
 [![bit components](https://img.shields.io/badge/dynamic/json.svg?color=6e3991&label=bit%20components&query=payload.totalComponents&url=https%3A%2F%2Fapi.bit.dev%2Fscope%2Fjoshk%2Fvue-spinners-css)](https://bit.dev/joshk/vue-spinners-css)
 [![npm version](https://badge.fury.io/js/vue-spinners-css.svg?u)](https://www.npmjs.com/package/vue-spinners-css)
 [![GitHub stars](https://img.shields.io/github/stars/joshk2/vue-spinners-css)](https://github.com/JoshK2/vue-spinners-css/stargazers)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/JoshK2/vue-spinners-css/master/LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/joshkuttler)](https://twitter.com/JoshKuttler)
 <span class="badge-buymeacoffee"><a href="https://ko-fi.com/X8X614J76" title="Donate to this project using Ko-fi"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-support-%23ff5f5f" alt="Buy Me A Coffee donate button" /></a></span>
 
 <p align="center">
-  <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/e5832341d5d3e440221cf80650042792a99e39f7.gif"></a>
+  <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/1990710a88808ee8914167c74f57e604c5ed91fe.gif"></a>
 </p>
 Amazing collection of pure CSS vue spinners components of css spinners for ajax or loading animation based on loading.io.  
 
@@ -41,6 +42,7 @@ The default `loading` prop is `true`.
 | Ripple Spinner   | `#7f58af`     | `true`        |
 | Roller Spinner   | `#7f58af`     | `true`        |
 | Spinner Spinner  | `#7f58af`     | `true`        |
+| Orbitals Spinner | `#7f58af`     | `true`        |
 
 
 ## 📦 Installation

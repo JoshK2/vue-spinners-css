@@ -1,6 +1,6 @@
 {
   "name": "vue-spinners-css",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "repository": {
     "type": "git",
@@ -39,7 +39,9 @@
     "build": "vue-cli-service build",
     "build:lib": "rm -rf dist && vue-cli-service build --target lib --inline-vue --name vue-spinners-css ./src/index.js",
     "lint": "vue-cli-service lint",
-    "format": "prettier --write \"src/**/*.vue\" \"src/**/*.js\""
+    "format": "prettier --write \"src/**/*.vue\" \"src/**/*.js\"",
+    "deploy:npm": "npm publish",
+    "deploy:bit": "bit export joshk.vue-spinners-css"
   },
   "peerDependencies": {
     "core-js": "^2.6.5",
