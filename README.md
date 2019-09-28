@@ -4,7 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/joshk2/vue-spinners-css)](https://github.com/JoshK2/vue-spinners-css/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/JoshK2/vue-spinners-css/master/LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/joshkuttler)](https://twitter.com/JoshKuttler)
-<span class="badge-buymeacoffee"><a href="https://www.buymeacoffee.com/s2cv3IikA" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a></span>
+<span class="badge-buymeacoffee"><a href="https://ko-fi.com/X8X614J76" title="Donate to this project using Ko-fi"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-support-%23ff5f5f" alt="Buy Me A Coffee donate button" /></a></span>
 
 <p align="center">
   <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/e5832341d5d3e440221cf80650042792a99e39f7.gif"></a>
@@ -134,7 +134,7 @@ You can see the components locally by cloning this repo and doing the following 
 ## 👏🏻 Support my open-source
 If you like to support my open-source contributions and feeling generous, feel free to:
 
-<a href="https://www.buymeacoffee.com/s2cv3IikA" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X614J76)
 
 ## 📄 License
 [MIT](https://github.com/JoshK2/vue-spinners-css/blob/master/LICENSE)
