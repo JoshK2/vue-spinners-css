@@ -10,8 +10,9 @@
 <p align="center">
   <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/1990710a88808ee8914167c74f57e604c5ed91fe.gif"></a>
 </p>
+
 Amazing collection of Vue spinners components with pure css.  
-The Vue spinners are based on loading.io and from all over the web. 
+The Vue spinners are based on loading.io and from all over the web.  
 
 - 💅No extra CSS imports
 - ✂️Zero dependencies
