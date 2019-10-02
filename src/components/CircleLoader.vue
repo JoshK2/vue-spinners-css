@@ -14,11 +14,17 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        size: {
+            type: Number,
+            default: 64,
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                width: `${this.size}px`,
+                height: `${this.size}px`,
             },
         }
     },
@@ -28,8 +34,8 @@ export default {
 <style scoped>
 .lds-circle {
     display: inline-block;
-    width: 64px;
-    height: 64px;
+    /* width: 64px;
+    height: 64px; */
     margin: 8px;
     border-radius: 50%;
     animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
