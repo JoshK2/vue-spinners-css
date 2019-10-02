@@ -1,21 +1,17 @@
 <template>
     <div v-show="loading" class="lds-default">
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
+        <div
+            v-for="i in 12"
+            :key="`lds-default-${i}`"
+            v-bind:style="[spinnerStyle, divsStyles[i - 1]]"
+        />
     </div>
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+
 export default {
     name: 'DefaultLoader',
     props: {
@@ -27,14 +23,29 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                animationDuration: this.duration,
             },
         }
     },
+    computed: {
+        divsStyles () {
+            const divsStyles = []
+            for (let i = 1; i <= 12; i++) {
+                divsStyles.push(calcPropertyValue('animationDelay', this.duration, 0.083 * (13 - i) - 1))
+            }
+            return divsStyles
+        },
+    }
 }
 </script>
 
@@ -51,7 +62,9 @@ export default {
     height: 6px;
     background: #fff;
     border-radius: 50%;
-    animation: lds-default 1.2s linear infinite;
+    animation-name: lds-default;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 .lds-default div:nth-child(1) {
     animation-delay: 0s;

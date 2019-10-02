@@ -1,13 +1,16 @@
 <template>
     <div v-show="loading" class="lds-ring">
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
+        <div v-bind:style="[spinnerStyle, animDiv1]"></div>
+        <div v-bind:style="[spinnerStyle, animDiv2]"></div>
+        <div v-bind:style="[spinnerStyle, animDiv3]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
     </div>
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+
 export default {
     name: 'RingLoader',
     props: {
@@ -19,14 +22,31 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 borderColor: `${this.color} transparent transparent transparent`,
+                animationDuration: this.duration,
             },
         }
     },
+    computed: {
+        animDiv1 () {
+            return calcPropertyValue('animationDelay', this.duration, -0.375)
+        },
+        animDiv2 () {
+            return calcPropertyValue('animationDelay', this.duration, -0.25)
+        },
+        animDiv3 () {
+            return calcPropertyValue('animationDelay', this.duration, -0.125)
+        },
+    }
 }
 </script>
 
@@ -46,17 +66,10 @@ export default {
     margin: 8px;
     border: 8px solid #fff;
     border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #fff transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
+    animation-name: lds-ring;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    animation-iteration-count: infinite;
 }
 @keyframes lds-ring {
     0% {

@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+
 export default {
     name: 'CircleLoader',
     props: {
@@ -18,6 +20,11 @@ export default {
             type: Number,
             default: 64,
         },
+        duration: {
+            type: String,
+            default: '2.4s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
@@ -25,6 +32,7 @@ export default {
                 background: this.color,
                 width: `${this.size}px`,
                 height: `${this.size}px`,
+                animationDuration: this.duration,
             },
         }
     },
@@ -38,7 +46,9 @@ export default {
     height: 64px; */
     margin: 8px;
     border-radius: 50%;
-    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    animation-name: lds-circle;
+    animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+    animation-iteration-count: infinite;
 }
 @keyframes lds-circle {
     0%,

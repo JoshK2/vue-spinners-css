@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+
 export default {
     name: 'EllipsisLoader',
     props: {
@@ -19,11 +21,17 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                animationDuration: this.duration,
             },
         }
     },
@@ -48,19 +56,23 @@ export default {
 }
 .lds-ellipsis div:nth-child(1) {
     left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
+    animation-name: lds-ellipsis1;
+    animation-iteration-count: infinite;
 }
 .lds-ellipsis div:nth-child(2) {
     left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
+    animation-name: lds-ellipsis2;
+    animation-iteration-count: infinite;
 }
 .lds-ellipsis div:nth-child(3) {
     left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
+    animation-name: lds-ellipsis2;
+    animation-iteration-count: infinite;
 }
 .lds-ellipsis div:nth-child(4) {
     left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
+    animation-name: lds-ellipsis3;
+    animation-iteration-count: infinite;
 }
 @keyframes lds-ellipsis1 {
     0% {

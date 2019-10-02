@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+
 export default {
     name: 'HourglassLoader',
     props: {
@@ -16,11 +18,17 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                animationDuration: this.duration,
             },
         }
     },
@@ -44,7 +52,8 @@ export default {
     box-sizing: border-box;
     border: 32px solid #fff;
     border-color: #fff transparent #fff transparent;
-    animation: lds-hourglass 1.2s infinite;
+    animation-name: lds-hourglass;
+    animation-iteration-count: infinite;
 }
 @keyframes lds-hourglass {
     0% {
