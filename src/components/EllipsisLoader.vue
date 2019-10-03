@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-ellipsis">
+    <div v-show="loading" class="lds-ellipsis" :style="{width: `${size}px`, height: `${size}px`}">
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
@@ -14,6 +14,10 @@ export default {
         loading: {
             type: Boolean,
             default: true,
+        },
+        size: {
+            type: Number,
+            default: 80,
         },
         color: {
             type: String,
@@ -32,35 +36,33 @@ export default {
 
 <style scoped>
 .lds-ellipsis {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-ellipsis div {
     position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
+
+    width: 16.25%;
+    height: 16.25%;
     border-radius: 50%;
     background: #fff;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
-    left: 8px;
+    left: 10%;
     animation: lds-ellipsis1 0.6s infinite;
 }
 .lds-ellipsis div:nth-child(2) {
-    left: 8px;
     animation: lds-ellipsis2 0.6s infinite;
 }
 .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
+    animation: lds-ellipsis3 0.6s infinite;
 }
 .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
+    left: 70%;
+    animation: lds-ellipsis4 0.6s infinite;
 }
 @keyframes lds-ellipsis1 {
     0% {
@@ -70,7 +72,23 @@ export default {
         transform: scale(1);
     }
 }
+@keyframes lds-ellipsis2 {
+    0% {
+        left: 10%;
+    }
+    100% {
+        left: 40%;
+    }
+}
 @keyframes lds-ellipsis3 {
+    0% {
+        left: 40%;
+    }
+    100% {
+        left: 70%;
+    }
+}
+@keyframes lds-ellipsis4 {
     0% {
         transform: scale(1);
     }
@@ -78,12 +96,5 @@ export default {
         transform: scale(0);
     }
 }
-@keyframes lds-ellipsis2 {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(24px, 0);
-    }
-}
+
 </style>
