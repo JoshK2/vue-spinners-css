@@ -1,39 +1,6 @@
 <template>
-    <div v-show="loading" class="lds-spinner">
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
+    <div v-show="loading" class="lds-spinner" :style="{width: `${size}px`, height: `${size}px`}">
+        <div v-for="(_, index) in Array(12)" :key="index" :style="{transformOrigin: `${size * 0.5}px ${size * 0.5}px`}">
             <div class="div-after" v-bind:style="[spinnerStyle]"></div>
         </div>
     </div>
@@ -47,6 +14,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        size: {
+            type: Number,
+            default: 80,
+        },
         color: {
             type: String,
             default: '#7f58af',
@@ -55,6 +26,10 @@ export default {
     data() {
         return {
             spinnerStyle: {
+                top: `${this.size * 0.0375}px`,
+                left: `${this.size * 0.4625}px`,
+                width: `${this.size * 0.075}px`,
+                height: `${this.size * 0.225}px`,
                 background: this.color,
             },
         }
@@ -67,21 +42,15 @@ export default {
     color: official;
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-spinner div {
-    transform-origin: 40px 40px;
     animation: lds-spinner 1.2s linear infinite;
 }
 .lds-spinner div .div-after {
     content: ' ';
     display: block;
     position: absolute;
-    top: 3px;
-    left: 37px;
-    width: 6px;
-    height: 18px;
+
     border-radius: 20%;
     background: #fff;
 }
