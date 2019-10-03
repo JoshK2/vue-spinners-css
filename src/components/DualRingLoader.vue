@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-dual-ring" :style="{width: `${size}px`, height: `${size}px`}">
+    <div v-show="loading" class="lds-dual-ring" :style="{ width: `${size}px`, height: `${size}px` }">
         <div class="lds-dual-ring-after" v-bind:style="[spinnerStyle]"></div>
     </div>
 </template>

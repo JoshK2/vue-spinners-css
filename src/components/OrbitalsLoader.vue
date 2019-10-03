@@ -50,9 +50,8 @@ export default {
     methods: {
         arc(pos) {
             // [0] -> inner; [1] -> outer
-            const sizes = [0.3875, 0.75].map(i => i * this.size);
-            const size = sizes[pos];
-
+            const sizes = [0.3875, 0.75].map(i => i * this.size)
+            const size = sizes[pos]
 
             return {
                 width: `${size}px`,
@@ -62,12 +61,9 @@ export default {
         },
         moon(pos, variant) {
             // [0] -> inner; [1] -> outer
-            const sizes = [
-                [0.1, 0.2125],
-                [0.1125, 0.4]
-            ];
-            const [size, transform] = sizes[pos].map(i => i * this.size);
-            const transformCalc = variant == 0 ? '+' : '-';
+            const sizes = [[0.1, 0.2125], [0.1125, 0.4]]
+            const [size, transform] = sizes[pos].map(i => i * this.size)
+            const transformCalc = variant == 0 ? '+' : '-'
 
             return {
                 width: `${size}px`,
@@ -76,7 +72,7 @@ export default {
                                 calc(-50% ${transformCalc} ${transform}px), 
                                 -50%)`,
             }
-        }
+        },
     },
 }
 </script>

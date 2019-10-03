@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-ring" :style="{width: `${size}px`, height: `${size}px`}">
+    <div v-show="loading" class="lds-ring" :style="{ width: `${size}px`, height: `${size}px` }">
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
@@ -22,7 +22,7 @@ export default {
         color: {
             type: String,
             default: '#7f58af',
-        }
+        },
     },
     data() {
         return {

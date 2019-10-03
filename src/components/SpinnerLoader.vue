@@ -1,6 +1,10 @@
 <template>
-    <div v-show="loading" class="lds-spinner" :style="{width: `${size}px`, height: `${size}px`}">
-        <div v-for="(_, index) in Array(12)" :key="index" :style="{transformOrigin: `${size * 0.5}px ${size * 0.5}px`}">
+    <div v-show="loading" class="lds-spinner" :style="{ width: `${size}px`, height: `${size}px` }">
+        <div
+            v-for="(_, index) in Array(12)"
+            :key="index"
+            :style="{ transformOrigin: `${size * 0.5}px ${size * 0.5}px` }"
+        >
             <div class="div-after" v-bind:style="[spinnerStyle]"></div>
         </div>
     </div>
