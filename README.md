@@ -10,7 +10,9 @@
 <p align="center">
   <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/1990710a88808ee8914167c74f57e604c5ed91fe.gif"></a>
 </p>
-Amazing collection of pure CSS vue spinners components of css spinners for ajax or loading animation based on loading.io.  
+
+Amazing collection of Vue spinners components with pure css.  
+The Vue spinners are based on loading.io and from all over the web.  
 
 - 💅No extra CSS imports
 - ✂️Zero dependencies
@@ -28,23 +30,23 @@ Each component accepts a `color` prop, and `loading` prop.
 The default `color` prop is `#7f58af`.  
 The default `loading` prop is `true`.  
 Component that accepts size prop have a default size in pixel.
+Component that accepts duration prop have a default duration in seconds.
 
-| Spinner          | color: string | loading: boolean  | size: number |
-| ---------------- | ------------  | ----------------- | ------------ |
-| Circle Spinner   | `#7f58af`     | `true`            | `64`         |
-| Default Spinner  | `#7f58af`     | `true`            | `80`         |
-| DualRing Spinner | `#7f58af`     | `true`            | `80`         |
-| Ellipsis Spinner | `#7f58af`     | `true`            | `80`         |
-| Facebook Spinner | `#7f58af`     | `true`            | `80`         |
-| Grid Spinner     | `#7f58af`     | `true`            | `80`         |
-| Heart Spinner    | `#7f58af`     | `true`            | `80`         |
-| Hourglass Spinner| `#7f58af`     | `true`            | `80`         |
-| Ring Spinner     | `#7f58af`     | `true`            | `80`         |
-| Ripple Spinner   | `#7f58af`     | `true`            | `80`         |
-| Roller Spinner   | `#7f58af`     | `true`            | `80`         |
-| Spinner Spinner  | `#7f58af`     | `true`            | `80`         |
-| Orbitals Spinner | `#7f58af`     | `true`            | `80`         |
-
+| Spinner          | color: string | loading: boolean  | size: number | duration: string |
+| ---------------- | ------------  | ----------------- | ------------ | ---------------- |
+| Circle Spinner   | `#7f58af`     | `true`            | `64`         | `2.4s`           |
+| Default Spinner  | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| DualRing Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Ellipsis Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Facebook Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Grid Spinner     | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Heart Spinner    | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Hourglass Spinner| `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Ring Spinner     | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Ripple Spinner   | `#7f58af`     | `true`            | `80`         | `1s`             |
+| Roller Spinner   | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Spinner Spinner  | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Orbitals Spinner | `#7f58af`     | `true`            | `80`         | `4s`             |
 
 ## 📦 Installation
 ### Using [npm](https://www.npmjs.com/package/vue-spinners-css) to install vue-spinners-css:  

@@ -1,9 +1,9 @@
 <template>
     <div v-show="loading" class="lds-roller" :style="{ width: `${size}px`, height: `${size}px` }">
         <div
-            v-for="(_, index) in Array(8)"
-            :key="index"
-            :style="{ transformOrigin: `${size * 0.5}px ${size * 0.5}px` }"
+            v-for="(_, i) in Array(8)"
+            :key="`lds-roller-${i}`"
+            :style="[mainAnimation, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, animDivs[0]]"
         >
             <div class="div-after" v-bind:style="[spinnerStyle, spinnerStylePosition(index)]"></div>
         </div>
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+
 export default {
     name: 'RollerLoader',
     props: {
@@ -25,6 +28,11 @@ export default {
         color: {
             type: String,
             default: '#7f58af',
+        },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
         },
     },
     data() {
@@ -56,6 +64,18 @@ export default {
             return { top: `${top}px`, left: `${left}px` }
         },
     },
+    computed: {
+        mainAnimation () {
+            return { animationDuration: this.duration }
+        },
+        animDivs () {
+            const divsStyles = []
+            for (let i = 1; i <= 8; i++) {
+                divsStyles.push(calcPropertyValue('animationDelay', this.duration, -0.03 * i))
+            }
+            return divsStyles
+        },
+    },
 }
 </script>
 
@@ -65,7 +85,9 @@ export default {
     position: relative;
 }
 .lds-roller > div {
-    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    animation-name: lds-roller;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    animation-iteration-count: infinite;
 }
 .lds-roller div .div-after {
     content: ' ';
@@ -74,31 +96,6 @@ export default {
     border-radius: 50%;
     background: #fff;
 }
-.lds-roller div:nth-child(1) {
-    animation-delay: -0.036s;
-}
-.lds-roller div:nth-child(2) {
-    animation-delay: -0.072s;
-}
-.lds-roller div:nth-child(3) {
-    animation-delay: -0.108s;
-}
-.lds-roller div:nth-child(4) {
-    animation-delay: -0.144s;
-}
-.lds-roller div:nth-child(5) {
-    animation-delay: -0.18s;
-}
-.lds-roller div:nth-child(6) {
-    animation-delay: -0.216s;
-}
-.lds-roller div:nth-child(7) {
-    animation-delay: -0.252s;
-}
-.lds-roller div:nth-child(8) {
-    animation-delay: -0.288s;
-}
-
 @keyframes lds-roller {
     0% {
         transform: rotate(0deg);

@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+
 export default {
     name: 'DualRingLoader',
     props: {
@@ -20,12 +22,18 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 borderWidth: `${this.size * 0.075}px`,
                 borderColor: `${this.color} transparent`,
+                animationDuration: this.duration,
             },
         }
     },
@@ -49,7 +57,9 @@ export default {
     border-radius: 50%;
     border: 6px solid #000;
     border-color: #000 transparent #000 transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
+    animation-name: lds-dual-ring;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 @keyframes lds-dual-ring {
     0% {

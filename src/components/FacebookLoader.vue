@@ -1,12 +1,17 @@
 <template>
     <div v-show="loading" class="lds-facebook" :style="{ width: `${size}px`, height: `${size}px` }">
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
+        <div
+            v-for="i in 3"
+            :key="`lds-facebook-${i}`"
+            v-bind:style="[spinnerStyle, divsStyles[i - 1]]"
+        />
     </div>
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+
 export default {
     name: 'FacebookLoader',
     props: {
@@ -22,14 +27,29 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                animationDuration: this.duration,
             },
         }
     },
+    computed: {
+        divsStyles () {
+            const divsStyles = []
+            for (let i = 3; i > 0; i--) {
+                divsStyles.push(calcPropertyValue('animationDelay', this.duration, -0.1 * i))
+            }
+            return divsStyles
+        },
+    }
 }
 </script>
 
@@ -44,19 +64,12 @@ export default {
 .lds-facebook div {
     width: 20%;
     background: #fff;
-    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    animation-name: lds-facebook;
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    animation-iteration-count: infinite;
 }
 .lds-facebook div + div {
     margin-left: 10%;
-}
-.lds-facebook div:nth-child(1) {
-    animation-delay: -0.24s;
-}
-.lds-facebook div:nth-child(2) {
-    animation-delay: -0.12s;
-}
-.lds-facebook div:nth-child(3) {
-    animation-delay: 0;
 }
 @keyframes lds-facebook {
     0% {

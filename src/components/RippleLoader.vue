@@ -1,11 +1,14 @@
 <template>
     <div v-show="loading" class="lds-ripple" :style="{ width: `${size}px`, height: `${size}px` }">
         <div v-bind:style="[spinnerStyle]"></div>
-        <div v-bind:style="[spinnerStyle]"></div>
+        <div v-bind:style="[spinnerStyle, animDiv2]"></div>
     </div>
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+
 export default {
     name: 'RippleLoader',
     props: {
@@ -21,14 +24,25 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 borderWidth: `${this.size * 0.05}px`,
                 borderColor: this.color,
+                animationDuration: this.duration,
             },
         }
+    },
+    computed: {
+        animDiv2 () {
+            return calcPropertyValue('animationDelay', this.duration, -0.5)
+        },
     },
 }
 </script>
@@ -43,10 +57,9 @@ export default {
     border: 4px solid #fff;
     opacity: 1;
     border-radius: 50%;
-    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-.lds-ripple div:nth-child(2) {
-    animation-delay: -0.5s;
+    animation-name: lds-ripple;
+    animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+    animation-iteration-count: infinite;
 }
 @keyframes lds-ripple {
     0% {
