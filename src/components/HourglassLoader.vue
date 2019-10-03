@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-hourglass">
+    <div v-show="loading" class="lds-hourglass" :style="{width: `${size}px`, height: `${size}px`}">
         <div class="lds-hourglass-after" v-bind:style="[spinnerStyle]"></div>
     </div>
 </template>
@@ -12,6 +12,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        size: {
+            type: Number,
+            default: 80,
+        },
         color: {
             type: String,
             default: '#7f58af',
@@ -20,6 +24,7 @@ export default {
     data() {
         return {
             spinnerStyle: {
+                borderWidth: `${this.size * 0.4}px`,
                 background: this.color,
             },
         }
@@ -31,8 +36,6 @@ export default {
 .lds-hourglass {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-hourglass-after {
     content: ' ';
@@ -40,7 +43,7 @@ export default {
     border-radius: 50%;
     width: 0;
     height: 0;
-    margin: 8px;
+    margin: 10%;
     box-sizing: border-box;
     border: 32px solid #fff;
     border-color: #fff transparent #fff transparent;
