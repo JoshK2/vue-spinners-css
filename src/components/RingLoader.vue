@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-ring">
+    <div v-show="loading" class="lds-ring" :style="{width: `${size}px`, height: `${size}px`}">
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
@@ -15,14 +15,19 @@ export default {
             type: Boolean,
             default: true,
         },
+        size: {
+            type: Number,
+            default: 80,
+        },
         color: {
             type: String,
             default: '#7f58af',
-        },
+        }
     },
     data() {
         return {
             spinnerStyle: {
+                borderWidth: `${this.size * 0.1}px`,
                 borderColor: `${this.color} transparent transparent transparent`,
             },
         }
@@ -34,16 +39,18 @@ export default {
 .lds-ring {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-ring div {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
+
+    /* ratio: calc(64px / 80px) */
+    width: 80%;
+    height: 80%;
+
+    /* ratio: calc(8px / 80px) */
+    margin: 10%;
     border: 8px solid #fff;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
