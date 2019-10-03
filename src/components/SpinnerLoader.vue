@@ -1,45 +1,19 @@
 <template>
     <div v-show="loading" class="lds-spinner">
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div>
+        <div
+            v-for="i in 12"
+            :key="`lds-spinner-${i}`"
+            v-bind:style="[spinnerStyle, divsStyles[i - 1]]"
+        >
             <div class="div-after" v-bind:style="[spinnerStyle]"></div>
         </div>
     </div>
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+
 export default {
     name: 'SpinnerLoader',
     props: {
@@ -51,14 +25,29 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                animationDuration: this.duration,
             },
         }
     },
+    computed: {
+        divsStyles () {
+            const divsStyles = []
+            for (let i = 1; i <= 12; i++) {
+                divsStyles.push(calcPropertyValue('animationDelay', this.duration, 0.083 * i - 1))
+            }
+            return divsStyles
+        },
+    }
 }
 </script>
 
@@ -72,7 +61,9 @@ export default {
 }
 .lds-spinner div {
     transform-origin: 40px 40px;
-    animation: lds-spinner 1.2s linear infinite;
+    animation-name: lds-spinner;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 .lds-spinner div .div-after {
     content: ' ';
@@ -87,51 +78,39 @@ export default {
 }
 .lds-spinner div:nth-child(1) {
     transform: rotate(0deg);
-    animation-delay: -1.1s;
 }
 .lds-spinner div:nth-child(2) {
     transform: rotate(30deg);
-    animation-delay: -1s;
 }
 .lds-spinner div:nth-child(3) {
     transform: rotate(60deg);
-    animation-delay: -0.9s;
 }
 .lds-spinner div:nth-child(4) {
     transform: rotate(90deg);
-    animation-delay: -0.8s;
 }
 .lds-spinner div:nth-child(5) {
     transform: rotate(120deg);
-    animation-delay: -0.7s;
 }
 .lds-spinner div:nth-child(6) {
     transform: rotate(150deg);
-    animation-delay: -0.6s;
 }
 .lds-spinner div:nth-child(7) {
     transform: rotate(180deg);
-    animation-delay: -0.5s;
 }
 .lds-spinner div:nth-child(8) {
     transform: rotate(210deg);
-    animation-delay: -0.4s;
 }
 .lds-spinner div:nth-child(9) {
     transform: rotate(240deg);
-    animation-delay: -0.3s;
 }
 .lds-spinner div:nth-child(10) {
     transform: rotate(270deg);
-    animation-delay: -0.2s;
 }
 .lds-spinner div:nth-child(11) {
     transform: rotate(300deg);
-    animation-delay: -0.1s;
 }
 .lds-spinner div:nth-child(12) {
     transform: rotate(330deg);
-    animation-delay: 0s;
 }
 @keyframes lds-spinner {
     0% {

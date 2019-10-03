@@ -1,7 +1,7 @@
 <template>
     <div v-show="loading" class="lds-orbitals">
         <div class="center" v-bind:style="[backgroundSpinnerStyle]"></div>
-        <div class="inner-spin">
+        <div class="inner-spin" v-bind:style="[innerSpinStyle]">
             <div class="inner-arc inner-arc_start-a" v-bind:style="[borderSpinnerStyle]"></div>
             <div class="inner-arc inner-arc_end-a" v-bind:style="[borderSpinnerStyle]"></div>
             <div class="inner-arc inner-arc_start-b" v-bind:style="[borderSpinnerStyle]"></div>
@@ -9,7 +9,7 @@
             <div class="inner-moon-a" v-bind:style="[backgroundSpinnerStyle]"></div>
             <div class="inner-moon-b" v-bind:style="[backgroundSpinnerStyle]"></div>
         </div>
-        <div class="outer-spin">
+        <div class="outer-spin" v-bind:style="[outerSpinStyle]">
             <div class="outer-arc outer-arc_start-a" v-bind:style="[borderSpinnerStyle]"></div>
             <div class="outer-arc outer-arc_end-a" v-bind:style="[borderSpinnerStyle]"></div>
             <div class="outer-arc outer-arc_start-b" v-bind:style="[borderSpinnerStyle]"></div>
@@ -21,6 +21,9 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+
 export default {
     name: 'OrbitalsLoader',
     props: {
@@ -32,6 +35,11 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '4s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
@@ -41,6 +49,14 @@ export default {
             borderSpinnerStyle: {
                 borderColor: this.color,
             },
+            outerSpinStyle: {
+                animationDuration: this.duration,
+            },
+        }
+    },
+    computed: {
+        innerSpinStyle () {
+            return calcPropertyValue('animationDuration', this.duration, 0.75)
         }
     },
 }
@@ -154,10 +170,14 @@ export default {
     transform: var(--center) rotate(45deg) scale(-1, -1);
 }
 .lds-orbitals .outer-spin {
-    animation: spin 4s linear infinite;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 .lds-orbitals .inner-spin {
-    animation: spin 3s linear infinite;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 @keyframes spin {
     100% {

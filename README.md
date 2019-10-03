@@ -30,22 +30,23 @@ Each component accepts a `color` prop, and `loading` prop.
 The default `color` prop is `#7f58af`.  
 The default `loading` prop is `true`.  
 Component that accepts size prop have a default size in pixel.
+Component that accepts duration prop have a default duration in seconds.
 
-| Spinner          | color: string | loading: boolean  | size: number |
-| ---------------- | ------------  | ----------------- | ------------ |
-| Circle Spinner   | `#7f58af`     | `true`            | `64`         |
-| Default Spinner  | `#7f58af`     | `true`            |              |
-| DualRing Spinner | `#7f58af`     | `true`            |              |
-| Ellipsis Spinner | `#7f58af`     | `true`            |              |
-| Facebook Spinner | `#7f58af`     | `true`            |              |
-| Grid Spinner     | `#7f58af`     | `true`            |              |
-| Heart Spinner    | `#7f58af`     | `true`            |              |
-| Hourglass Spinner| `#7f58af`     | `true`            |              |
-| Ring Spinner     | `#7f58af`     | `true`            |              |
-| Ripple Spinner   | `#7f58af`     | `true`            |              |
-| Roller Spinner   | `#7f58af`     | `true`            |              |
-| Spinner Spinner  | `#7f58af`     | `true`            |              |
-| Orbitals Spinner | `#7f58af`     | `true`            |              |
+| Spinner          | color: string | loading: boolean  | size: number | duration: string |
+| ---------------- | ------------  | ----------------- | ------------ | ---------------- |
+| Circle Spinner   | `#7f58af`     | `true`            | `64`         | `2.4s`           |
+| Default Spinner  | `#7f58af`     | `true`            |              | `1.2s`           |
+| DualRing Spinner | `#7f58af`     | `true`            |              | `1.2s`           |
+| Ellipsis Spinner | `#7f58af`     | `true`            |              | `1.2s`           |
+| Facebook Spinner | `#7f58af`     | `true`            |              | `1.2s`           |
+| Grid Spinner     | `#7f58af`     | `true`            |              | `1.2s`           |
+| Heart Spinner    | `#7f58af`     | `true`            |              | `1.2s`           |
+| Hourglass Spinner| `#7f58af`     | `true`            |              | `1.2s`           |
+| Ring Spinner     | `#7f58af`     | `true`            |              | `1.2s`           |
+| Ripple Spinner   | `#7f58af`     | `true`            |              | `1s`             |
+| Roller Spinner   | `#7f58af`     | `true`            |              | `1.2s`           |
+| Spinner Spinner  | `#7f58af`     | `true`            |              | `1.2s`           |
+| Orbitals Spinner | `#7f58af`     | `true`            |              | `4s`             |
 
 
 ## 📦 Installation

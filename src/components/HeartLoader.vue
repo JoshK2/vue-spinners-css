@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+
 export default {
     name: 'HeartLoader',
     props: {
@@ -19,11 +21,17 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                animationDuration: this.duration,
             },
         }
     },
@@ -46,7 +54,9 @@ export default {
     width: 32px;
     height: 32px;
     background: #fff;
-    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-name: lds-heart;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-iteration-count: infinite;
 }
 .lds-heart .div-after,
 .lds-heart .div-before {

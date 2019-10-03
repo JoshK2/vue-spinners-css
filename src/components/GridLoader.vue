@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import validateDuration from '@/helpers/validateDuration.js'
+
 export default {
     name: 'GridLoader',
     props: {
@@ -24,11 +26,17 @@ export default {
             type: String,
             default: '#7f58af',
         },
+        duration: {
+            type: String,
+            default: '1.2s',
+            validator: validateDuration
+        },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
+                animationDuration: this.duration,
             },
         }
     },
@@ -48,7 +56,9 @@ export default {
     height: 16px;
     border-radius: 50%;
     background: #fff;
-    animation: lds-grid 1.2s linear infinite;
+    animation-name: lds-grid;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 .lds-grid div:nth-child(1) {
     top: 8px;
