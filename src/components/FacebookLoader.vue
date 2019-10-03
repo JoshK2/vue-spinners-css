@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-facebook">
+    <div v-show="loading" class="lds-facebook" :style="{width: `${size}px`, height: `${size}px`}">
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
@@ -13,6 +13,10 @@ export default {
         loading: {
             type: Boolean,
             default: true,
+        },
+        size: {
+            type: Number,
+            default: 80,
         },
         color: {
             type: String,
@@ -31,40 +35,36 @@ export default {
 
 <style scoped>
 .lds-facebook {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-facebook div {
-    display: inline-block;
-    position: absolute;
-    left: 8px;
-    width: 16px;
+    width: 20%;
     background: #fff;
     animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
+.lds-facebook div + div {
+    margin-left: 10%;
+}
 .lds-facebook div:nth-child(1) {
-    left: 8px;
     animation-delay: -0.24s;
 }
 .lds-facebook div:nth-child(2) {
-    left: 32px;
     animation-delay: -0.12s;
 }
 .lds-facebook div:nth-child(3) {
-    left: 56px;
     animation-delay: 0;
 }
 @keyframes lds-facebook {
     0% {
-        top: 8px;
-        height: 64px;
+        height: 80%;
     }
     50%,
     100% {
-        top: 24px;
-        height: 32px;
+        height: 40%;
     }
 }
 </style>
