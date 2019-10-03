@@ -32,18 +32,18 @@ Component that accepts size prop have a default size in pixel.
 | Spinner          | color: string | loading: boolean  | size: number |
 | ---------------- | ------------  | ----------------- | ------------ |
 | Circle Spinner   | `#7f58af`     | `true`            | `64`         |
-| Default Spinner  | `#7f58af`     | `true`            |              |
-| DualRing Spinner | `#7f58af`     | `true`            |              |
-| Ellipsis Spinner | `#7f58af`     | `true`            |              |
-| Facebook Spinner | `#7f58af`     | `true`            |              |
-| Grid Spinner     | `#7f58af`     | `true`            |              |
-| Heart Spinner    | `#7f58af`     | `true`            |              |
-| Hourglass Spinner| `#7f58af`     | `true`            |              |
-| Ring Spinner     | `#7f58af`     | `true`            |              |
-| Ripple Spinner   | `#7f58af`     | `true`            |              |
-| Roller Spinner   | `#7f58af`     | `true`            |              |
-| Spinner Spinner  | `#7f58af`     | `true`            |              |
-| Orbitals Spinner | `#7f58af`     | `true`            |              |
+| Default Spinner  | `#7f58af`     | `true`            | `80`         |
+| DualRing Spinner | `#7f58af`     | `true`            | `80`         |
+| Ellipsis Spinner | `#7f58af`     | `true`            | `80`         |
+| Facebook Spinner | `#7f58af`     | `true`            | `80`         |
+| Grid Spinner     | `#7f58af`     | `true`            | `80`         |
+| Heart Spinner    | `#7f58af`     | `true`            | `80`         |
+| Hourglass Spinner| `#7f58af`     | `true`            | `80`         |
+| Ring Spinner     | `#7f58af`     | `true`            | `80`         |
+| Ripple Spinner   | `#7f58af`     | `true`            | `80`         |
+| Roller Spinner   | `#7f58af`     | `true`            | `80`         |
+| Spinner Spinner  | `#7f58af`     | `true`            | `80`         |
+| Orbitals Spinner | `#7f58af`     | `true`            | `80`         |
 
 
 ## 📦 Installation
