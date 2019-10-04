@@ -5,7 +5,7 @@
             :key="`lds-roller-${i}`"
             :style="[mainAnimation, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, animDivs[0]]"
         >
-            <div class="div-after" v-bind:style="[spinnerStyle, spinnerStylePosition(index)]"></div>
+            <div class="div-after" v-bind:style="[spinnerStyle, spinnerStylePosition(i)]"></div>
         </div>
     </div>
 </template>
