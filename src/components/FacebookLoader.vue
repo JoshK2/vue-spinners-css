@@ -1,10 +1,6 @@
 <template>
     <div v-show="loading" class="lds-facebook" :style="{ width: `${size}px`, height: `${size}px` }">
-        <div
-            v-for="i in 3"
-            :key="`lds-facebook-${i}`"
-            v-bind:style="[spinnerStyle, divsStyles[i - 1]]"
-        />
+        <div v-for="i in 3" :key="`lds-facebook-${i}`" v-bind:style="[spinnerStyle, divsStyles[i - 1]]" />
     </div>
 </template>
 
@@ -30,7 +26,7 @@ export default {
         duration: {
             type: String,
             default: '1.2s',
-            validator: validateDuration
+            validator: validateDuration,
         },
     },
     data() {
@@ -42,14 +38,14 @@ export default {
         }
     },
     computed: {
-        divsStyles () {
+        divsStyles() {
             const divsStyles = []
             for (let i = 3; i > 0; i--) {
                 divsStyles.push(calcPropertyValue('animationDelay', this.duration, -0.1 * i))
             }
             return divsStyles
         },
-    }
+    },
 }
 </script>
 

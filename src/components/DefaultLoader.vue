@@ -1,10 +1,6 @@
 <template>
     <div v-show="loading" class="lds-default" :style="{ width: `${size}px`, height: `${size}px` }">
-        <div
-            v-for="i in 12"
-            :key="`lds-default-${i}`"
-            v-bind:style="[spinnerStyle, divsStyles[i - 1]]"
-        />
+        <div v-for="i in 12" :key="`lds-default-${i}`" v-bind:style="[spinnerStyle, divsStyles[i - 1]]" />
     </div>
 </template>
 
@@ -30,7 +26,7 @@ export default {
         duration: {
             type: String,
             default: '1.2s',
-            validator: validateDuration
+            validator: validateDuration,
         },
     },
     data() {
@@ -42,14 +38,14 @@ export default {
         }
     },
     computed: {
-        divsStyles () {
+        divsStyles() {
             const divsStyles = []
             for (let i = 1; i <= 12; i++) {
                 divsStyles.push(calcPropertyValue('animationDelay', this.duration, 0.083 * (13 - i) - 1))
             }
             return divsStyles
         },
-    }
+    },
 }
 </script>
 

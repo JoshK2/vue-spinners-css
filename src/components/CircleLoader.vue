@@ -23,7 +23,7 @@ export default {
         duration: {
             type: String,
             default: '2.4s',
-            validator: validateDuration
+            validator: validateDuration,
         },
     },
     data() {

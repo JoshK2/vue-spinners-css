@@ -42,7 +42,7 @@ export default {
         duration: {
             type: String,
             default: '4s',
-            validator: validateDuration
+            validator: validateDuration,
         },
     },
     data() {
@@ -59,9 +59,9 @@ export default {
         }
     },
     computed: {
-        innerSpinStyle () {
+        innerSpinStyle() {
             return calcPropertyValue('animationDuration', this.duration, 0.75)
-        }
+        },
     },
     methods: {
         arc(pos) {

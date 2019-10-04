@@ -32,7 +32,7 @@ export default {
         duration: {
             type: String,
             default: '1.2s',
-            validator: validateDuration
+            validator: validateDuration,
         },
     },
     data() {
@@ -50,14 +50,14 @@ export default {
         }
     },
     computed: {
-        divsStyles () {
+        divsStyles() {
             const divsStyles = []
             for (let i = 1; i <= 12; i++) {
                 divsStyles.push(calcPropertyValue('animationDelay', this.duration, 0.083 * i - 1))
             }
             return divsStyles
         },
-    }
+    },
 }
 </script>
 

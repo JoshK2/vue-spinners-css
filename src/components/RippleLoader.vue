@@ -27,7 +27,7 @@ export default {
         duration: {
             type: String,
             default: '1s',
-            validator: validateDuration
+            validator: validateDuration,
         },
     },
     data() {
@@ -40,7 +40,7 @@ export default {
         }
     },
     computed: {
-        animDiv2 () {
+        animDiv2() {
             return calcPropertyValue('animationDelay', this.duration, -0.5)
         },
     },
