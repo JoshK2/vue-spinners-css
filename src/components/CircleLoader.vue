@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import validateDuration from '@/helpers/validateDuration.js'
+import validateDuration from '../helpers/validateDuration.js'
 
 export default {
     name: 'CircleLoader',
@@ -42,8 +42,6 @@ export default {
 <style scoped>
 .lds-circle {
     display: inline-block;
-    /* width: 64px;
-    height: 64px; */
     margin: 8px;
     border-radius: 50%;
     animation-name: lds-circle;

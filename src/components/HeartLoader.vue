@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import validateDuration from '@/helpers/validateDuration.js'
+import validateDuration from '../helpers/validateDuration.js'
 
 export default {
     name: 'HeartLoader',

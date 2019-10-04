@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import validateDuration from '@/helpers/validateDuration.js'
+import validateDuration from '../helpers/validateDuration.js'
 
 export default {
     name: 'EllipsisLoader',
@@ -23,7 +23,7 @@ export default {
         },
         duration: {
             type: String,
-            default: '1.2s',
+            default: '0.6s',
             validator: validateDuration
         },
     },
@@ -63,6 +63,7 @@ export default {
     left: 8px;
     animation-name: lds-ellipsis2;
     animation-iteration-count: infinite;
+    animation-duration: 0s;
 }
 .lds-ellipsis div:nth-child(3) {
     left: 32px;

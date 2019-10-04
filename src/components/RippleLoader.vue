@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import validateDuration from '@/helpers/validateDuration.js'
-import calcPropertyValue from '@/helpers/calcPropertyValue.js'
+import validateDuration from '../helpers/validateDuration.js'
+import calcPropertyValue from '../helpers/calcPropertyValue.js'
 
 export default {
     name: 'RippleLoader',

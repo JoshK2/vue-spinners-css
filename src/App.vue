@@ -1,86 +1,121 @@
 <template>
+<div>
+    <div>
+        <h1>Vue Spinners</h1>
+        <div class="normal-spinners">
+            <CircleLoader :color="'#be97e8'" />
+            <DefaultLoader :color="'#be97e8'" />
+            <DualRingLoader :color="'#be97e8'" />
+            <EllipsisLoader :color="'#be97e8'" />
+            <FacebookLoader :color="'#be97e8'" />
+            <GridLoader :color="'#be97e8'" />
+            <HeartLoader :color="'#be97e8'" />
+            <HourglassLoader :color="'#be97e8'" />
+            <RingLoader :color="'#be97e8'" />
+            <RippleLoader :color="'#be97e8'" />
+            <RollerLoader :color="'#be97e8'" />
+            <SpinnerLoader :color="'#be97e8'" />
+            <OrbitalsLoader :color="'#be97e8'" />
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div>
+        <h2>Animation Duration Property</h2>
+        <div class="normal-spinners">
+            <CircleLoader :color="'#be97e8'" duration="5s" />
+            <DefaultLoader :color="'#be97e8'" duration="5s" />
+            <DualRingLoader :color="'#be97e8'" duration="5s" />
+            <EllipsisLoader :color="'#be97e8'" duration="1s" />
+            <FacebookLoader :color="'#be97e8'" duration="5s" />
+            <GridLoader :color="'#be97e8'" duration="5s" />
+            <HeartLoader :color="'#be97e8'" duration="5s" />
+            <HourglassLoader :color="'#be97e8'" duration="5s" />
+            <RingLoader :color="'#be97e8'" duration="5s" />
+            <RippleLoader :color="'#be97e8'" duration="5s" />
+            <RollerLoader :color="'#be97e8'" duration="5s" />
+            <SpinnerLoader :color="'#be97e8'" duration="5s" />
+            <OrbitalsLoader :color="'#be97e8'" duration="10s" />
+        </div>
+    </div>
     <div id="app">
-        <h1 style="text-align: center;">Vue Spinners</h1>
+        <h2 style="text-align: center;">Color Property</h2>
         <div class="block">
             <CircleLoader :color="'#54f1d2'" />
             <CircleLoader :color="'#be97e8'" />
             <CircleLoader />
-            <CircleLoader duration="5s" />
         </div>
         <div class="block">
             <DefaultLoader :color="'#54f1d2'" />
             <DefaultLoader :color="'#be97e8'" />
             <DefaultLoader />
-            <DefaultLoader duration="5s" />
         </div>
         <div class="block">
             <DualRingLoader :color="'#54f1d2'" />
             <DualRingLoader :color="'#be97e8'" />
             <DualRingLoader />
-            <DualRingLoader duration="5s" />
         </div>
         <div class="block">
             <EllipsisLoader :color="'#54f1d2'" />
             <EllipsisLoader :color="'#be97e8'" />
             <EllipsisLoader/>
-            <EllipsisLoader duration="5s" />
         </div>
         <div class="block">
             <FacebookLoader :color="'#54f1d2'" />
             <FacebookLoader :color="'#be97e8'" />
             <FacebookLoader />
-            <FacebookLoader duration="5s" />
         </div>
         <div class="block">
             <GridLoader :color="'#54f1d2'" />
             <GridLoader :color="'#be97e8'" />
             <GridLoader />
-            <GridLoader duration="5s" />
         </div>
         <div class="block">
             <HeartLoader :color="'#54f1d2'" />
             <HeartLoader :color="'#be97e8'" />
             <HeartLoader />
-            <HeartLoader duration="5s" />
         </div>
         <div class="block">
             <HourglassLoader :color="'#54f1d2'" />
             <HourglassLoader :color="'#be97e8'" />
             <HourglassLoader />
-            <HourglassLoader duration="5s" />
         </div>
         <div class="block">
             <RingLoader :color="'#54f1d2'" />
             <RingLoader :color="'#be97e8'" />
             <RingLoader />
-            <RingLoader duration="5s" />
         </div>
         <div class="block">
             <RippleLoader :color="'#54f1d2'" />
             <RippleLoader :color="'#be97e8'" />
             <RippleLoader />
-            <RippleLoader duration="5s" />
         </div>
         <div class="block">
             <RollerLoader :color="'#54f1d2'" />
             <RollerLoader :color="'#be97e8'" />
             <RollerLoader />
-            <RollerLoader duration="5s" />
         </div>
         <div class="block">
             <SpinnerLoader :color="'#54f1d2'" />
             <SpinnerLoader :color="'#be97e8'" />
             <SpinnerLoader />
-            <SpinnerLoader duration="5s" />
         </div>
         <div class="block">
             <OrbitalsLoader :color="'#54f1d2'" />
             <OrbitalsLoader :color="'#be97e8'" />
             <OrbitalsLoader />
-            <OrbitalsLoader duration="10s" />
         </div>
         <div style="clear: both"></div>
     </div>
+    <div id="app">
+        <h2 style="text-align: center;">Size Property</h2>
+        <div class="block">
+            <CircleLoader :color="'#be97e8'" />
+            <CircleLoader :color="'#be97e8'" :size="32" />
+            <CircleLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
 </template>
 
 <script>
@@ -127,8 +162,12 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-h1 {
+.normal-spinners {
+    text-align: center;
+}
+h1, h2 {
     width: 100%;
+    text-align: center;
 }
 .block {
     border: 1px solid #ccc;
