@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-ellipsis" :style="{ width: `${size}px`, height: `${size}px` }">
+    <div v-show="loading" class="lds-ellipsis">
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import validateDuration from '../helpers/validateDuration.js'
-
 export default {
     name: 'EllipsisLoader',
     props: {
@@ -17,25 +15,15 @@ export default {
             type: Boolean,
             default: true,
         },
-        size: {
-            type: Number,
-            default: 80,
-        },
         color: {
             type: String,
             default: '#7f58af',
-        },
-        duration: {
-            type: String,
-            default: '0.6s',
-            validator: validateDuration
         },
     },
     data() {
         return {
             spinnerStyle: {
                 background: this.color,
-                animationDuration: this.duration,
             },
         }
     },
@@ -44,38 +32,35 @@ export default {
 
 <style scoped>
 .lds-ellipsis {
-    display: inline-flex;
-    align-items: center;
-
+    display: inline-block;
     position: relative;
+    width: 80px;
+    height: 80px;
 }
 .lds-ellipsis div {
     position: absolute;
-
-    width: 16.25%;
-    height: 16.25%;
+    top: 33px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
     background: #fff;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
-    left: 10%;
-    animation-name: lds-ellipsis1;
-    animation-iteration-count: infinite;
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
 }
 .lds-ellipsis div:nth-child(2) {
-    animation-name: lds-ellipsis2;
-    animation-iteration-count: infinite;
-    animation-duration: 0s;
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
 }
 .lds-ellipsis div:nth-child(3) {
-    animation-name: lds-ellipsis3;
-    animation-iteration-count: infinite;
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
 }
 .lds-ellipsis div:nth-child(4) {
-    left: 70%;
-    animation-name: lds-ellipsis3;
-    animation-iteration-count: infinite;
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
 }
 @keyframes lds-ellipsis1 {
     0% {
@@ -85,28 +70,20 @@ export default {
         transform: scale(1);
     }
 }
-@keyframes lds-ellipsis2 {
-    0% {
-        left: 10%;
-    }
-    100% {
-        left: 40%;
-    }
-}
 @keyframes lds-ellipsis3 {
-    0% {
-        left: 40%;
-    }
-    100% {
-        left: 70%;
-    }
-}
-@keyframes lds-ellipsis4 {
     0% {
         transform: scale(1);
     }
     100% {
         transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
     }
 }
 </style>
