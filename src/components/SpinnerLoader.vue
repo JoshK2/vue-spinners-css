@@ -3,7 +3,7 @@
         <div
             v-for="i in 12"
             :key="`lds-spinner-${i}`"
-            :style="[spinnerStyle, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, divsStyles[i - 1]]"
+            :style="[spinnerStyleDuration, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, divsStyles[i - 1]]"
         >
             <div class="div-after" v-bind:style="[spinnerStyle]"></div>
         </div>
@@ -37,13 +37,15 @@ export default {
     },
     data() {
         return {
+            spinnerStyleDuration: {
+                animationDuration: this.duration,
+            },
             spinnerStyle: {
                 top: `${this.size * 0.0375}px`,
                 left: `${this.size * 0.4625}px`,
                 width: `${this.size * 0.075}px`,
                 height: `${this.size * 0.225}px`,
                 background: this.color,
-                animationDuration: this.duration,
             },
         }
     },
@@ -61,7 +63,6 @@ export default {
 
 <style scoped>
 .lds-spinner {
-    color: official;
     display: inline-block;
     position: relative;
 }
