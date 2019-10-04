@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-facebook">
+    <div v-show="loading" class="lds-facebook" :style="{ width: `${size}px`, height: `${size}px` }">
         <div
             v-for="i in 3"
             :key="`lds-facebook-${i}`"
@@ -18,6 +18,10 @@ export default {
         loading: {
             type: Boolean,
             default: true,
+        },
+        size: {
+            type: Number,
+            default: 80,
         },
         color: {
             type: String,
@@ -51,39 +55,29 @@ export default {
 
 <style scoped>
 .lds-facebook {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-facebook div {
-    display: inline-block;
-    position: absolute;
-    left: 8px;
-    width: 16px;
+    width: 20%;
     background: #fff;
     animation-name: lds-facebook;
     animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
     animation-iteration-count: infinite;
 }
-.lds-facebook div:nth-child(1) {
-    left: 8px;
-}
-.lds-facebook div:nth-child(2) {
-    left: 32px;
-}
-.lds-facebook div:nth-child(3) {
-    left: 56px;
+.lds-facebook div + div {
+    margin-left: 10%;
 }
 @keyframes lds-facebook {
     0% {
-        top: 8px;
-        height: 64px;
+        height: 80%;
     }
     50%,
     100% {
-        top: 24px;
-        height: 32px;
+        height: 40%;
     }
 }
 </style>

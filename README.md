@@ -35,19 +35,18 @@ Component that accepts duration prop have a default duration in seconds.
 | Spinner          | color: string | loading: boolean  | size: number | duration: string |
 | ---------------- | ------------  | ----------------- | ------------ | ---------------- |
 | Circle Spinner   | `#7f58af`     | `true`            | `64`         | `2.4s`           |
-| Default Spinner  | `#7f58af`     | `true`            |              | `1.2s`           |
-| DualRing Spinner | `#7f58af`     | `true`            |              | `1.2s`           |
-| Ellipsis Spinner | `#7f58af`     | `true`            |              | `1.2s`           |
-| Facebook Spinner | `#7f58af`     | `true`            |              | `1.2s`           |
-| Grid Spinner     | `#7f58af`     | `true`            |              | `1.2s`           |
-| Heart Spinner    | `#7f58af`     | `true`            |              | `1.2s`           |
-| Hourglass Spinner| `#7f58af`     | `true`            |              | `1.2s`           |
-| Ring Spinner     | `#7f58af`     | `true`            |              | `1.2s`           |
-| Ripple Spinner   | `#7f58af`     | `true`            |              | `1s`             |
-| Roller Spinner   | `#7f58af`     | `true`            |              | `1.2s`           |
-| Spinner Spinner  | `#7f58af`     | `true`            |              | `1.2s`           |
-| Orbitals Spinner | `#7f58af`     | `true`            |              | `4s`             |
-
+| Default Spinner  | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| DualRing Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Ellipsis Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Facebook Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Grid Spinner     | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Heart Spinner    | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Hourglass Spinner| `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Ring Spinner     | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Ripple Spinner   | `#7f58af`     | `true`            | `80`         | `1s`             |
+| Roller Spinner   | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Spinner Spinner  | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Orbitals Spinner | `#7f58af`     | `true`            | `80`         | `4s`             |
 
 ## 📦 Installation
 ### Using [npm](https://www.npmjs.com/package/vue-spinners-css) to install vue-spinners-css:  

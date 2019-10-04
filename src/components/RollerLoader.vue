@@ -1,28 +1,11 @@
 <template>
-    <div v-show="loading" class="lds-roller">
-        <div v-bind:style="[mainAnimation, animDivs[0]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div v-bind:style="[mainAnimation, animDivs[1]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div v-bind:style="[mainAnimation, animDivs[2]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div v-bind:style="[mainAnimation, animDivs[3]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div v-bind:style="[mainAnimation, animDivs[4]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div v-bind:style="[mainAnimation, animDivs[5]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div v-bind:style="[mainAnimation, animDivs[6]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
-        </div>
-        <div v-bind:style="[mainAnimation, animDivs[7]]">
-            <div class="div-after" v-bind:style="[spinnerStyle]"></div>
+    <div v-show="loading" class="lds-roller" :style="{ width: `${size}px`, height: `${size}px` }">
+        <div
+            v-for="(_, i) in Array(8)"
+            :key="`lds-roller-${i}`"
+            :style="[mainAnimation, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, animDivs[0]]"
+        >
+            <div class="div-after" v-bind:style="[spinnerStyle, spinnerStylePosition(index)]"></div>
         </div>
     </div>
 </template>
@@ -38,6 +21,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        size: {
+            type: Number,
+            default: 80,
+        },
         color: {
             type: String,
             default: '#7f58af',
@@ -51,9 +38,31 @@ export default {
     data() {
         return {
             spinnerStyle: {
+                width: `${this.size * 0.0875}px`,
+                height: `${this.size * 0.0875}px`,
+                margin: `-${this.size * 0.05}px 0 0 -${this.size * 0.05}px`,
                 background: this.color,
             },
         }
+    },
+    methods: {
+        spinnerStylePosition(nthChild) {
+            const topLeftTable = [
+                [0.7875, 0.7875],
+                [0.7875, 0.7875],
+                [0.85, 0.7],
+                [0.8875, 0.6],
+                [0.9, 0.5],
+                [0.8875, 0.4],
+                [0.85, 0.3],
+                [0.7875, 0.2125],
+                [0.7, 0.15],
+            ]
+
+            const [top, left] = topLeftTable[nthChild].map(i => i * this.size)
+
+            return { top: `${top}px`, left: `${left}px` }
+        },
     },
     computed: {
         mainAnimation () {
@@ -66,7 +75,7 @@ export default {
             }
             return divsStyles
         },
-    }
+    },
 }
 </script>
 
@@ -74,11 +83,8 @@ export default {
 .lds-roller {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-roller > div {
-    transform-origin: 40px 40px;
     animation-name: lds-roller;
     animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
     animation-iteration-count: infinite;
@@ -87,43 +93,8 @@ export default {
     content: ' ';
     display: block;
     position: absolute;
-    width: 7px;
-    height: 7px;
     border-radius: 50%;
     background: #fff;
-    margin: -4px 0 0 -4px;
-}
-.lds-roller div:nth-child(1) .div-after {
-    top: 63px;
-    left: 63px;
-}
-.lds-roller div:nth-child(2) .div-after {
-    top: 68px;
-    left: 56px;
-}
-.lds-roller div:nth-child(3) .div-after {
-    top: 71px;
-    left: 48px;
-}
-.lds-roller div:nth-child(4) .div-after {
-    top: 72px;
-    left: 40px;
-}
-.lds-roller div:nth-child(5) .div-after {
-    top: 71px;
-    left: 32px;
-}
-.lds-roller div:nth-child(6) .div-after {
-    top: 68px;
-    left: 24px;
-}
-.lds-roller div:nth-child(7) .div-after {
-    top: 63px;
-    left: 17px;
-}
-.lds-roller div:nth-child(8) .div-after {
-    top: 56px;
-    left: 12px;
 }
 @keyframes lds-roller {
     0% {

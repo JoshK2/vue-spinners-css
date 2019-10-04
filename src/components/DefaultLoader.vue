@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-default">
+    <div v-show="loading" class="lds-default" :style="{ width: `${size}px`, height: `${size}px` }">
         <div
             v-for="i in 12"
             :key="`lds-default-${i}`"
@@ -18,6 +18,10 @@ export default {
         loading: {
             type: Boolean,
             default: true,
+        },
+        size: {
+            type: Number,
+            default: 80,
         },
         color: {
             type: String,
@@ -53,13 +57,11 @@ export default {
 .lds-default {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-default div {
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 7.5%;
+    height: 7.5%;
     background: #fff;
     border-radius: 50%;
     animation-name: lds-default;
@@ -68,63 +70,63 @@ export default {
 }
 .lds-default div:nth-child(1) {
     animation-delay: 0s;
-    top: 37px;
-    left: 66px;
+    top: 46.25%;
+    left: 82.5%;
 }
 .lds-default div:nth-child(2) {
     animation-delay: -0.1s;
-    top: 22px;
-    left: 62px;
+    top: 27.5%;
+    left: 77.5%;
 }
 .lds-default div:nth-child(3) {
     animation-delay: -0.2s;
-    top: 11px;
-    left: 52px;
+    top: 13.75%;
+    left: 65%;
 }
 .lds-default div:nth-child(4) {
     animation-delay: -0.3s;
-    top: 7px;
-    left: 37px;
+    top: 8.75%;
+    left: 46.25%;
 }
 .lds-default div:nth-child(5) {
     animation-delay: -0.4s;
-    top: 11px;
-    left: 22px;
+    top: 13.75%;
+    left: 27.5%;
 }
 .lds-default div:nth-child(6) {
     animation-delay: -0.5s;
-    top: 22px;
-    left: 11px;
+    top: 27.5%;
+    left: 13.75%;
 }
 .lds-default div:nth-child(7) {
     animation-delay: -0.6s;
-    top: 37px;
-    left: 7px;
+    top: 46.25%;
+    left: 8.75%;
 }
 .lds-default div:nth-child(8) {
     animation-delay: -0.7s;
-    top: 52px;
-    left: 11px;
+    top: 65%;
+    left: 13.75%;
 }
 .lds-default div:nth-child(9) {
     animation-delay: -0.8s;
-    top: 62px;
-    left: 22px;
+    top: 77.5%;
+    left: 27.5%;
 }
 .lds-default div:nth-child(10) {
     animation-delay: -0.9s;
-    top: 66px;
-    left: 37px;
+    top: 82.5%;
+    left: 46.25%;
 }
 .lds-default div:nth-child(11) {
     animation-delay: -1s;
-    top: 62px;
-    left: 52px;
+    top: 77.5%;
+    left: 65%;
 }
 .lds-default div:nth-child(12) {
     animation-delay: -1.1s;
-    top: 52px;
-    left: 62px;
+    top: 65%;
+    left: 77.5%;
 }
 @keyframes lds-default {
     0%,

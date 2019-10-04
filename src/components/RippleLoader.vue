@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-ripple">
+    <div v-show="loading" class="lds-ripple" :style="{ width: `${size}px`, height: `${size}px` }">
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle, animDiv2]"></div>
     </div>
@@ -16,6 +16,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        size: {
+            type: Number,
+            default: 80,
+        },
         color: {
             type: String,
             default: '#7f58af',
@@ -29,6 +33,7 @@ export default {
     data() {
         return {
             spinnerStyle: {
+                borderWidth: `${this.size * 0.05}px`,
                 borderColor: this.color,
                 animationDuration: this.duration,
             },
@@ -46,8 +51,6 @@ export default {
 .lds-ripple {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-ripple div {
     position: absolute;
@@ -60,8 +63,8 @@ export default {
 }
 @keyframes lds-ripple {
     0% {
-        top: 36px;
-        left: 36px;
+        top: 45%;
+        left: 45%;
         width: 0;
         height: 0;
         opacity: 1;
@@ -69,8 +72,8 @@ export default {
     100% {
         top: 0px;
         left: 0px;
-        width: 72px;
-        height: 72px;
+        width: 90%;
+        height: 90%;
         opacity: 0;
     }
 }

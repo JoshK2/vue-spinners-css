@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-dual-ring">
+    <div v-show="loading" class="lds-dual-ring" :style="{ width: `${size}px`, height: `${size}px` }">
         <div class="lds-dual-ring-after" v-bind:style="[spinnerStyle]"></div>
     </div>
 </template>
@@ -14,6 +14,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        size: {
+            type: Number,
+            default: 80,
+        },
         color: {
             type: String,
             default: '#7f58af',
@@ -27,6 +31,7 @@ export default {
     data() {
         return {
             spinnerStyle: {
+                borderWidth: `${this.size * 0.075}px`,
                 borderColor: `${this.color} transparent`,
                 animationDuration: this.duration,
             },
@@ -38,15 +43,17 @@ export default {
 <style scoped>
 .lds-dual-ring {
     display: inline-block;
-    width: 80px;
-    height: 80px;
 }
 .lds-dual-ring-after {
     content: ' ';
     display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
+
+    /* ratio: calc(64px / 80px) */
+    width: 80%;
+    height: 80%;
+    /* ratio: calc(8px / 80px) */
+    margin: 10%;
+
     border-radius: 50%;
     border: 6px solid #000;
     border-color: #000 transparent #000 transparent;

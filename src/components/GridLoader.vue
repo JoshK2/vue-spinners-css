@@ -1,5 +1,5 @@
 <template>
-    <div v-show="loading" class="lds-grid">
+    <div v-show="loading" class="lds-grid" :style="{ width: `${size}px`, height: `${size}px` }">
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
         <div v-bind:style="[spinnerStyle]"></div>
@@ -21,6 +21,10 @@ export default {
         loading: {
             type: Boolean,
             default: true,
+        },
+        size: {
+            type: Number,
+            default: 80,
         },
         color: {
             type: String,
@@ -45,15 +49,16 @@ export default {
 
 <style scoped>
 .lds-grid {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 .lds-grid div {
-    position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 20%;
+    height: 20%;
+
+    margin-top: 10%;
+    margin-left: 10%;
+
     border-radius: 50%;
     background: #fff;
     animation-name: lds-grid;
@@ -61,48 +66,31 @@ export default {
     animation-iteration-count: infinite;
 }
 .lds-grid div:nth-child(1) {
-    top: 8px;
-    left: 8px;
     animation-delay: 0s;
 }
 .lds-grid div:nth-child(2) {
-    top: 8px;
-    left: 32px;
     animation-delay: -0.4s;
 }
 .lds-grid div:nth-child(3) {
-    top: 8px;
-    left: 56px;
     animation-delay: -0.8s;
 }
 .lds-grid div:nth-child(4) {
-    top: 32px;
-    left: 8px;
     animation-delay: -0.4s;
 }
 .lds-grid div:nth-child(5) {
-    top: 32px;
-    left: 32px;
     animation-delay: -0.8s;
 }
 .lds-grid div:nth-child(6) {
-    top: 32px;
-    left: 56px;
     animation-delay: -1.2s;
 }
 .lds-grid div:nth-child(7) {
-    top: 56px;
-    left: 8px;
+    margin-bottom: 10%;
     animation-delay: -0.8s;
 }
 .lds-grid div:nth-child(8) {
-    top: 56px;
-    left: 32px;
     animation-delay: -1.2s;
 }
 .lds-grid div:nth-child(9) {
-    top: 56px;
-    left: 56px;
     animation-delay: -1.6s;
 }
 @keyframes lds-grid {

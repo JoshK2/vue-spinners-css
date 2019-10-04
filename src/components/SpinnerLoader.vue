@@ -1,9 +1,9 @@
 <template>
-    <div v-show="loading" class="lds-spinner">
+    <div v-show="loading" class="lds-spinner" :style="{ width: `${size}px`, height: `${size}px` }">
         <div
             v-for="i in 12"
             :key="`lds-spinner-${i}`"
-            v-bind:style="[spinnerStyle, divsStyles[i - 1]]"
+            :style="[spinnerStyle, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, divsStyles[i - 1]]"
         >
             <div class="div-after" v-bind:style="[spinnerStyle]"></div>
         </div>
@@ -21,6 +21,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        size: {
+            type: Number,
+            default: 80,
+        },
         color: {
             type: String,
             default: '#7f58af',
@@ -34,6 +38,10 @@ export default {
     data() {
         return {
             spinnerStyle: {
+                top: `${this.size * 0.0375}px`,
+                left: `${this.size * 0.4625}px`,
+                width: `${this.size * 0.075}px`,
+                height: `${this.size * 0.225}px`,
                 background: this.color,
                 animationDuration: this.duration,
             },
@@ -56,11 +64,8 @@ export default {
     color: official;
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-spinner div {
-    transform-origin: 40px 40px;
     animation-name: lds-spinner;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -69,10 +74,7 @@ export default {
     content: ' ';
     display: block;
     position: absolute;
-    top: 3px;
-    left: 37px;
-    width: 6px;
-    height: 18px;
+
     border-radius: 20%;
     background: #fff;
 }
