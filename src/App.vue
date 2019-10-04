@@ -3,21 +3,22 @@
     <div>
         <h1>Vue Spinners</h1>
         <div class="normal-spinners">
-            <CircleLoader :color="'#be97e8'" />
-            <DefaultLoader :color="'#be97e8'" />
-            <DualRingLoader :color="'#be97e8'" />
-            <EllipsisLoader :color="'#be97e8'" />
-            <FacebookLoader :color="'#be97e8'" />
-            <GridLoader :color="'#be97e8'" />
-            <HeartLoader :color="'#be97e8'" />
-            <HourglassLoader :color="'#be97e8'" />
-            <RingLoader :color="'#be97e8'" />
-            <RippleLoader :color="'#be97e8'" />
-            <RollerLoader :color="'#be97e8'" />
-            <SpinnerLoader :color="'#be97e8'" />
-            <OrbitalsLoader :color="'#be97e8'" />
+            <CircleLoader :color="'#be97e8'" class="loader" />
+            <DefaultLoader :color="'#be97e8'" class="loader" />
+            <DualRingLoader :color="'#be97e8'" class="loader" />
+            <EllipsisLoader :color="'#be97e8'" class="loader" />
+            <FacebookLoader :color="'#be97e8'" class="loader" />
+            <GridLoader :color="'#be97e8'" class="loader" />
+            <HeartLoader :color="'#be97e8'" class="loader" />
+            <HourglassLoader :color="'#be97e8'" class="loader" />
+            <RingLoader :color="'#be97e8'" class="loader" />
+            <RippleLoader :color="'#be97e8'" class="loader" />
+            <RollerLoader :color="'#be97e8'" class="loader" />
+            <SpinnerLoader :color="'#be97e8'" class="loader" />
+            <OrbitalsLoader :color="'#be97e8'" class="loader" />
+            <div style="clear: both"></div>
         </div>
-        <div style="clear: both"></div>
+        
     </div>
     <div>
         <h2>Animation Duration Property</h2>
@@ -25,7 +26,7 @@
             <CircleLoader :color="'#be97e8'" duration="5s" />
             <DefaultLoader :color="'#be97e8'" duration="5s" />
             <DualRingLoader :color="'#be97e8'" duration="5s" />
-            <EllipsisLoader :color="'#be97e8'" duration="1s" />
+            <!-- <EllipsisLoader :color="'#be97e8'" duration="1s" /> -->
             <FacebookLoader :color="'#be97e8'" duration="5s" />
             <GridLoader :color="'#be97e8'" duration="5s" />
             <HeartLoader :color="'#be97e8'" duration="5s" />
@@ -113,6 +114,61 @@
             <CircleLoader :color="'#be97e8'" :size="32" />
             <CircleLoader :color="'#be97e8'" :size="16" />
         </div>
+        <div class="block">
+            <DefaultLoader :color="'#be97e8'" />
+            <DefaultLoader :color="'#be97e8'" :size="32" />
+            <DefaultLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <DualRingLoader :color="'#be97e8'" />
+            <DualRingLoader :color="'#be97e8'" :size="32" />
+            <DualRingLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <FacebookLoader :color="'#be97e8'" />
+            <FacebookLoader :color="'#be97e8'" :size="32" />
+            <FacebookLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <GridLoader :color="'#be97e8'" />
+            <GridLoader :color="'#be97e8'" :size="32" />
+            <GridLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <HeartLoader :color="'#be97e8'" />
+            <HeartLoader :color="'#be97e8'" :size="32" />
+            <HeartLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <HourglassLoader :color="'#be97e8'" />
+            <HourglassLoader :color="'#be97e8'" :size="32" />
+            <HourglassLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <RingLoader :color="'#be97e8'" />
+            <RingLoader :color="'#be97e8'" :size="32" />
+            <RingLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <RippleLoader :color="'#be97e8'" />
+            <RippleLoader :color="'#be97e8'" :size="32" />
+            <RippleLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <RollerLoader :color="'#be97e8'" />
+            <RollerLoader :color="'#be97e8'" :size="32" />
+            <RollerLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <SpinnerLoader :color="'#be97e8'" />
+            <SpinnerLoader :color="'#be97e8'" :size="32" />
+            <SpinnerLoader :color="'#be97e8'" :size="16" />
+        </div>
+        <div class="block">
+            <OrbitalsLoader :color="'#be97e8'" />
+            <OrbitalsLoader :color="'#be97e8'" :size="32" />
+            <OrbitalsLoader :color="'#be97e8'" :size="16" />
+        </div>
         <div style="clear: both"></div>
     </div>
 </div>
@@ -163,7 +219,8 @@ export default {
     justify-content: space-between;
 }
 .normal-spinners {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 h1, h2 {
     width: 100%;
@@ -178,6 +235,6 @@ h1, h2 {
     padding: 10px;
 }
 .loader {
-    margin: 20px;
+    float: left;
 }
 </style>

@@ -37,7 +37,7 @@ Component that accepts duration prop have a default duration in seconds.
 | Circle Spinner   | `#7f58af`     | `true`            | `64`         | `2.4s`           |
 | Default Spinner  | `#7f58af`     | `true`            | `80`         | `1.2s`           |
 | DualRing Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
-| Ellipsis Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
+| Ellipsis Spinner | `#7f58af`     | `true`            |              |                  |
 | Facebook Spinner | `#7f58af`     | `true`            | `80`         | `1.2s`           |
 | Grid Spinner     | `#7f58af`     | `true`            | `80`         | `1.2s`           |
 | Heart Spinner    | `#7f58af`     | `true`            | `80`         | `1.2s`           |
