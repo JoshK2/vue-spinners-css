@@ -3,7 +3,7 @@
         <div
             v-for="(_, i) in Array(8)"
             :key="`lds-roller-${i}`"
-            :style="[mainAnimation, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, animDivs[0]]"
+            :style="[mainAnimation, { transformOrigin: `${size * 0.5}px ${size * 0.5}px` }, animDivs[i]]"
         >
             <div class="div-after" v-bind:style="[spinnerStyle, spinnerStylePosition(i)]"></div>
         </div>
