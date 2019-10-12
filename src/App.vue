@@ -25,7 +25,7 @@
                 <CircleLoader :color="'#be97e8'" duration="5s" />
                 <DefaultLoader :color="'#be97e8'" duration="5s" />
                 <DualRingLoader :color="'#be97e8'" duration="5s" />
-                <EllipsisLoader :color="'#be97e8'" duration="2s" />
+                <!-- <EllipsisLoader :color="'#be97e8'" duration="1s" /> -->
                 <FacebookLoader :color="'#be97e8'" duration="5s" />
                 <GridLoader :color="'#be97e8'" duration="5s" />
                 <HeartLoader :color="'#be97e8'" duration="5s" />
