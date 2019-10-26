@@ -220,6 +220,13 @@ export default {
 .normal-spinners {
     display: flex;
     justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(90px,1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    margin: 0 auto;
+    width:100%;
+    max-width: 800px;
 }
 h1,
 h2 {
