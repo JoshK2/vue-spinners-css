@@ -38,6 +38,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:lib": "rm -rf dist && vue-cli-service build --target lib --inline-vue --name vue-spinners-css ./src/index.js",
+    "build:bit": "rm -rf dist && bit build",
     "lint": "vue-cli-service lint",
     "format": "prettier --write \"src/**/*.vue\" \"src/**/*.js\"",
     "deploy:npm": "npm publish",

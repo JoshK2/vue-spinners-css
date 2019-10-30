@@ -1,4 +1,5 @@
 # Vue Spinners CSS Loaders ([React](https://github.com/JoshK2/react-spinners-css), [Angular](https://github.com/JoshK2/ng-spinners))
+[![CircleCI](https://circleci.com/gh/JoshK2/vue-spinners-css.svg?style=svg)](https://circleci.com/gh/JoshK2/vue-spinners-css)
 [![bit components](https://img.shields.io/badge/dynamic/json.svg?color=6e3991&label=bit%20components&query=payload.totalComponents&url=https%3A%2F%2Fapi.bit.dev%2Fscope%2Fjoshk%2Fvue-spinners-css)](https://bit.dev/joshk/vue-spinners-css)
 [![npm version](https://badge.fury.io/js/vue-spinners-css.svg?u)](https://www.npmjs.com/package/vue-spinners-css)
 [![GitHub stars](https://img.shields.io/github/stars/joshk2/vue-spinners-css)](https://github.com/JoshK2/vue-spinners-css/stargazers)
