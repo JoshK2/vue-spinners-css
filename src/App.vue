@@ -11,6 +11,7 @@
                 <GridLoader :color="'#be97e8'" class="loader" />
                 <HeartLoader :color="'#be97e8'" class="loader" />
                 <HourglassLoader :color="'#be97e8'" class="loader" />
+                <LineLoader :color="'#be97e8'" class="loader" />
                 <RingLoader :color="'#be97e8'" class="loader" />
                 <RippleLoader :color="'#be97e8'" class="loader" />
                 <RollerLoader :color="'#be97e8'" class="loader" />
@@ -25,11 +26,12 @@
                 <CircleLoader :color="'#be97e8'" duration="5s" />
                 <DefaultLoader :color="'#be97e8'" duration="5s" />
                 <DualRingLoader :color="'#be97e8'" duration="5s" />
-                <!-- <EllipsisLoader :color="'#be97e8'" duration="1s" /> -->
+                <EllipsisLoader :color="'#be97e8'" duration="1s" />
                 <FacebookLoader :color="'#be97e8'" duration="5s" />
                 <GridLoader :color="'#be97e8'" duration="5s" />
                 <HeartLoader :color="'#be97e8'" duration="5s" />
                 <HourglassLoader :color="'#be97e8'" duration="5s" />
+                <LineLoader :color="'#be97e8'" duration="5s" />
                 <RingLoader :color="'#be97e8'" duration="5s" />
                 <RippleLoader :color="'#be97e8'" duration="5s" />
                 <RollerLoader :color="'#be97e8'" duration="5s" />
@@ -78,6 +80,11 @@
                 <HourglassLoader :color="'#54f1d2'" />
                 <HourglassLoader :color="'#be97e8'" />
                 <HourglassLoader />
+            </div>
+            <div class="block">
+                <LineLoader :color="'#54f1d2'" />
+                <LineLoader :color="'#be97e8'" />
+                <LineLoader />
             </div>
             <div class="block">
                 <RingLoader :color="'#54f1d2'" />
@@ -144,6 +151,11 @@
                 <HourglassLoader :color="'#be97e8'" :size="16" />
             </div>
             <div class="block">
+                <LineLoader :color="'#be97e8'" />
+                <LineLoader :color="'#be97e8'" :size="32" />
+                <LineLoader :color="'#be97e8'" :size="16" />
+            </div>
+            <div class="block">
                 <RingLoader :color="'#be97e8'" />
                 <RingLoader :color="'#be97e8'" :size="32" />
                 <RingLoader :color="'#be97e8'" :size="16" />
@@ -182,6 +194,7 @@ import FacebookLoader from './components/FacebookLoader'
 import GridLoader from './components/GridLoader.vue'
 import HeartLoader from './components/HeartLoader.vue'
 import HourglassLoader from './components/HourglassLoader.vue'
+import LineLoader from './components/LineLoader.vue'
 import RingLoader from './components/RingLoader.vue'
 import RippleLoader from './components/RippleLoader.vue'
 import RollerLoader from './components/RollerLoader.vue'
@@ -199,6 +212,7 @@ export default {
         GridLoader,
         HeartLoader,
         HourglassLoader,
+        LineLoader,
         RingLoader,
         RippleLoader,
         RollerLoader,

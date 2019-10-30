@@ -6,6 +6,7 @@ import FacebookLoader from './FacebookLoader.vue'
 import GridLoader from './GridLoader.vue'
 import HeartLoader from './HeartLoader.vue'
 import HourglassLoader from './HourglassLoader.vue'
+import LineLoader from './LineLoader.vue'
 import RingLoader from './RingLoader.vue'
 import RippleLoader from './RippleLoader.vue'
 import RollerLoader from './RollerLoader.vue'
@@ -21,6 +22,7 @@ export {
     GridLoader,
     HeartLoader,
     HourglassLoader,
+    LineLoader,
     RingLoader,
     RippleLoader,
     RollerLoader,
