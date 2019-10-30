@@ -8,7 +8,7 @@
 <span class="badge-buymeacoffee"><a href="https://ko-fi.com/X8X614J76" title="Donate to this project using Ko-fi"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-support-%23ff5f5f" alt="Buy Me A Coffee donate button" /></a></span>
 
 <p align="center">
-  <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/1990710a88808ee8914167c74f57e604c5ed91fe.gif"></a>
+  <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/4b9974d257035da5fcefcc63621103ba68b8aefc.gif"></a>
 </p>
 
 Amazing collection of Vue spinners components with pure css.  
@@ -47,6 +47,7 @@ Component that accepts duration prop have a default duration in seconds.
 | Roller Spinner   | `#7f58af`     | `true`            | `80`         | `1.2s`           |
 | Spinner Spinner  | `#7f58af`     | `true`            | `80`         | `1.2s`           |
 | Orbitals Spinner | `#7f58af`     | `true`            | `80`         | `4s`             |
+| Line Spinner     | `#7f58af`     | `true`            | `80`         | `1.2s`           |
 
 ## 📦 Installation
 ### Using [npm](https://www.npmjs.com/package/vue-spinners-css) to install vue-spinners-css:  
