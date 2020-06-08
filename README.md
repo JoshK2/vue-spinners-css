@@ -6,7 +6,6 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/JoshK2/vue-spinners-css/master/LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/joshkuttler)](https://twitter.com/JoshKuttler)
-<span class="badge-buymeacoffee"><a href="https://ko-fi.com/X8X614J76" title="Donate to this project using Ko-fi"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-support-%23ff5f5f" alt="Buy Me A Coffee donate button" /></a></span>
 
 <p align="center">
   <a href="https://bit.dev/joshk/vue-spinners-css"><img src="https://i.imagesup.co/images2/4b9974d257035da5fcefcc63621103ba68b8aefc.gif"></a>
