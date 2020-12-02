@@ -66,7 +66,7 @@
   },
   "bit": {
     "env": {
-      "compiler": "bit.envs/bundlers/vue@2.6.21"
+      "compiler": "bit.envs/compilers/vue@0.1.13"
     },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm"
